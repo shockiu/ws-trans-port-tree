@@ -41,7 +41,7 @@ export class WsTransporter extends Client {
         try {
             if (!this.statusWS) return Promise.resolve({ error: "WAIT_LOGIN" });
             const { message, phone } = data;
-            const response = await this.sendMessage(`@c.us`, message);
+            const response = await this.sendMessage(`${phone}@c.us`, message);
             return { id: response.id.id };
         } catch (error: any) {
             return Promise.resolve({ error: error.message });
