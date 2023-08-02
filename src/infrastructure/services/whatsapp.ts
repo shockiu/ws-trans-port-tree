@@ -1,4 +1,5 @@
 import EventEmitter from 'events';
+import { platform } from 'os';
 import { Client, LocalAuth } from 'whatsapp-web.js';
 import qrcode from 'qrcode-terminal';
 
@@ -12,7 +13,10 @@ export class WsTransporter extends Client {
             restartOnAuthFail:true,
             puppeteer: {
                 headless:  true,
-                args: ['--no-sandbox', '--non-headless']
+                args: ['--no-sandbox', '--non-headless'],
+                ...(platform() === 'linux' && {
+                    executablePath : '/usr/bin/chromium-browser'
+                })
             }
         })
         console.log("Iniciando....");
