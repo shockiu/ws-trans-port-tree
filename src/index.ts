@@ -5,7 +5,7 @@ import routes from './routes/index.routes';
 import { runningJobs } from './handler/index.handler';
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT_API;
 app.use(cors());
 app.use(express.json());
 
