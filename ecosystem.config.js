@@ -3,8 +3,6 @@ module.exports = {
         {
             name: "app-ws-message",
             script: "./dist/index.js",
-            watch: false,
-            instances: 1,
             logs: ['/home/ubuntu/logs/api-ws.log'],
             env: {
                 NODE_ENV: "development",
