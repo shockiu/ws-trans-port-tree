@@ -9,7 +9,7 @@ module.exports = {
             env: {
                 NODE_ENV: "development",
                 PORT_API: 8000,
-                PHONE_NUMBER: 584261145862
+                PHONE_NUMBER: 1
             }
         }
     ]
